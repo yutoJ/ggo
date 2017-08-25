@@ -1,3 +1,4 @@
 class Gadget < ApplicationRecord
-  belongs_to :owner, foreign_key: :owner_id, class_name: "User"
+  belongs_to :owner, class_name: "User"
+  has_many :reservations
 end

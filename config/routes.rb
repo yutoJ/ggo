@@ -1,6 +1,10 @@
 Rails.application.routes.draw do
 
 
+  get 'reservations/your_reservation'
+
+  get 'reservations/your_rent'
+
   get 'gadgets/index'
 
   get 'gadgets/show'

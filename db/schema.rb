@@ -10,19 +10,45 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170825161025) do
+ActiveRecord::Schema.define(version: 20170825163056) do
 
   create_table "gadgets", force: :cascade do |t|
     t.string   "gadget_type"
     t.text     "description"
     t.integer  "price"
-    t.integer  "owner"
+    t.integer  "owner",                        null: false
     t.string   "city"
-    t.boolean  "active"
+    t.boolean  "active",       default: false
     t.integer  "instant",      default: 0
     t.string   "listing_name"
-    t.datetime "created_at",               null: false
-    t.datetime "updated_at",               null: false
+    t.datetime "created_at",                   null: false
+    t.datetime "updated_at",                   null: false
+  end
+
+  create_table "reservations", force: :cascade do |t|
+    t.integer  "price",                  null: false
+    t.integer  "status",     default: 0, null: false
+    t.datetime "start_date",             null: false
+    t.datetime "end_date",               null: false
+    t.integer  "user_id",                null: false
+    t.integer  "gadget_id",              null: false
+    t.datetime "created_at",             null: false
+    t.datetime "updated_at",             null: false
+    t.index ["gadget_id"], name: "index_reservations_on_gadget_id"
+    t.index ["user_id"], name: "index_reservations_on_user_id"
+  end
+
+  create_table "reviews", force: :cascade do |t|
+    t.text     "comment"
+    t.integer  "star",       default: 1
+    t.integer  "owner_id",               null: false
+    t.integer  "gadget_id",              null: false
+    t.integer  "guest_id",               null: false
+    t.datetime "created_at",             null: false
+    t.datetime "updated_at",             null: false
+    t.index ["gadget_id"], name: "index_reviews_on_gadget_id"
+    t.index ["guest_id"], name: "index_reviews_on_guest_id"
+    t.index ["owner_id"], name: "index_reviews_on_owner_id"
   end
 
   create_table "users", force: :cascade do |t|

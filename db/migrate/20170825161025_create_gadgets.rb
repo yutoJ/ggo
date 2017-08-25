@@ -4,9 +4,9 @@ class CreateGadgets < ActiveRecord::Migration[5.0]
       t.string :gadget_type
       t.text :description
       t.integer :price
-      t.integer :owner
+      t.integer :owner, null: false
       t.string :city
-      t.boolean :active
+      t.boolean :active, default: false
       t.integer :instant, default: 0
       t.string :listing_name
 
