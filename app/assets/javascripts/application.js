@@ -12,5 +12,11 @@
 //
 //= require jquery
 //= require jquery_ujs
-//= require turbolinks
+//= require jquery-ui/datepicker
+//= require jquery-ui/slider
+//= require toastr
+//= require bootstrap-sprockets
+//= require moment
+//= require fullcalendar
+//= require cable
 //= require_tree .

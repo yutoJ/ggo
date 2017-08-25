@@ -38,16 +38,19 @@ gem 'faker'
 #debug
 gem 'pry-rails'
 gem 'better_errors'
+gem 'rails_12factor', group: :production
 
 #auth
 gem 'omniauth', '~> 1.6'
 gem 'omniauth-facebook', '~> 4.0'
-
+gem 'omniauth-twitter'
 #storage
 gem 'aws-sdk', '~> 2.8'
 
 group :development, :test do
   gem 'byebug', platform: :mri
+  gem 'rspec-rails'
+  gem 'factory_girl_rails'
 end
 
 #non-function
@@ -59,6 +62,7 @@ group :development do
   gem 'spring'
   gem 'spring-watcher-listen', '~> 2.0.0'
   gem 'letter_opener_web'
+  gem 'faker'
 end
 
 gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
