@@ -8,7 +8,7 @@
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
       </button>
-      <%= link_to "AirRoom2", root_path, class: "navbar-brand" %>
+      <%= link_to "Gadget Go", root_path, class: "navbar-brand" %>
     </div>
     <div id="navbar" class="navbar-collapse collapse">
       <%= form_tag search_path, class: "navbar-form navbar-left", method: :get do %>
@@ -19,7 +19,7 @@
       <ul class="nav navbar-nav navbar-right">
         <li>
           <button class="btn btn-form btn-small">
-            <%= link_to "Become a host", new_room_path, style: "color: white; text-decoration: none;" %>
+            <%= link_to "Become a host", root_path, style: "color: white; text-decoration: none;" %>
           </button>
         </li>
 
@@ -27,12 +27,6 @@
           <li><%= link_to "Login", new_user_session_path %></li>
           <li><%= link_to "Sign Up", new_user_registration_path %></li>
         <% else %>
-          <li>
-            <%= link_to notifications_path do %>
-              <i class="fa fa-bell fa-2x icon-babu"></i>
-              <span class="badge" id="navbar_num_of_unread"><%= current_user.unread if current_user.unread > 0 %></span>
-            <% end %>
-          </li>
           <li class="dropdown">
             <a href="#" class="dropdown-toggle" data-toggle="dropdown"
               role="button" aria-haspopup="true" aria-expanded="false">
