@@ -12,14 +12,15 @@
       <div class="panel-body">
         <ul class="sidebar-list">
           <!-- TODO fix it -->
+          <li><i class="fa fa-volume-control-phone" aria-hidden="true"></i> 身分証明書<span class="pull-right icon-babu"><i class="fa fa-check-circle-o"></i></span></li>
           <% if @user.email %>
             <li><i class="fa fa-envelope-open-o" aria-hidden="true"></i> メール<span class="pull-right icon-babu"><i class="fa fa-check-circle-o"></i></span></li>
           <% end %>
           <!-- TODO fix it -->
-
-            <li><i class="fa fa-facebook-square" aria-hidden="true"></i> Facebook<span class="pull-right icon-babu"><i class="fa fa-check-circle-o"></i></span></li>
-
-          <li><i class="fa fa-volume-control-phone" aria-hidden="true"></i> 電話番号<span class="pull-right icon-babu"><i class="fa fa-check-circle-o"></i></span></li>
+          <li><i class="fa fa-facebook-square" aria-hidden="true"></i> Facebook<span class="pull-right icon-babu"><i class="fa fa-check-circle-o"></i></span></li>
+          <% if @user.phone_number %>
+            <li><i class="fa fa-volume-control-phone" aria-hidden="true"></i> 電話番号<span class="pull-right icon-babu"><i class="fa fa-check-circle-o"></i></span></li>
+          <% end %>
         </ul>
 
       </div>

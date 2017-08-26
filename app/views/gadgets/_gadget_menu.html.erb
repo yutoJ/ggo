@@ -1,0 +1,39 @@
+<ul class="sidebar-list">
+  <li class="sidebar-item">
+    <%= link_to "ガジェットタイプ", listing_gadget_path, class: "sidebar-link active" %>
+    <span class="pull-right text-babu"><i class="fa fa-check"></i></span>
+  </li>
+  <li class="sidebar-item">
+    <%= link_to "レンタル料", pricing_gadget_path, class: "sidebar-link active" %>
+    <% if !@gadget.price.blank? %>
+      <span class="pull-right text-babu"><i class="fa fa-check"></i></span>
+    <% end %>
+  </li>
+  <li class="sidebar-item">
+    <%= link_to "ガイジェット詳細情報", description_gadget_path, class: "sidebar-link active" %>
+    <% if !@gadget.listing_name.blank? %>
+      <span class="pull-right text-babu"><i class="fa fa-check"></i></span>
+    <% end %>
+  </li>
+  <li class="sidebar-item">
+    <%= link_to "写真", photo_upload_gadget_path, class: "sidebar-link active" %>
+    <% if !@gadget.photos.blank? %>
+      <span id="photo_check" class="pull-right text-babu"><i class="fa fa-check"></i></span>
+    <% end %>
+  </li>
+
+  <li class="sidebar-item">
+    <%= link_to "宅配エリア", location_gadget_path, class: "sidebar-link active" %>
+    <% if !@gadget.address.blank? %>
+      <span class="pull-right text-babu"><i class="fa fa-check"></i></span>
+    <% end %>
+  </li>
+</ul>
+<hr/>
+
+<% is_ready = !@gadget.active && !@gadget.price.blank? && !@gadget.listing_name.blank? && !@gadget.photos.blank? && !@gadget.address.blank? %>
+
+<%= form_for @gadget do |f| %>
+  <%= f.hidden_field :active, value: true %>
+  <%= f.submit "公開", id: "publish_button", class: "btn btn-normal btn-block", disabled: !is_ready %>
+<% end %>

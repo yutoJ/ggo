@@ -1,0 +1,37 @@
+<div class="row">
+  <div class="col-md-3">
+    <%= render 'gadget_menu' %>
+  </div>
+  <div class="col-md-9">
+    <div class="panel panel-default">
+      <div class="panel-heading">
+        詳細
+      </div>
+      <div class="panel-body">
+        <div class="container">
+          <%= form_for @gadget do |f| %>
+            <div class="row">
+              <div class="form-group">
+                <label>ガジェット名</label>
+                <%= f.text_field :listing_name, placeholder: "キャッチなフレーズを入力してください", class: "form-control", required: true %>
+              </div>
+            </div>
+
+            <div class="row">
+              <div class="form-group">
+                <label>紹介、アピール</label>
+                <%= f.text_area :description, rows: 5, placeholder: "あなたのガジェットを紹介してください", class: "form-control", required: true %>
+              </div>
+            </div>
+
+            <div class="text-center">
+              <%= f.submit "保存", class: "btn btn-form" %>
+            </div>
+
+          <% end %>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</div>

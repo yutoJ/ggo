@@ -4,7 +4,7 @@ FactoryGirl.define do
     description "MyText"
     price 1
     owner 1
-    city "MyString"
+    address "MyString"
     active false
     instant 1
     listing_name "MyString"

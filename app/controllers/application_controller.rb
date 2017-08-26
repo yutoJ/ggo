@@ -2,7 +2,7 @@ class ApplicationController < ActionController::Base
   protect_from_forgery with: :exception
   before_action :configure_permitted_parameters, if: :devise_controller?
 
-  PERMISSIBLE_ATTRIBUTES = [:name, :phone_number, :description]
+  PERMISSIBLE_ATTRIBUTES = [:name, :nickname, :address, :introduction, :phone_number]
 
   private
   def configure_permitted_parameters

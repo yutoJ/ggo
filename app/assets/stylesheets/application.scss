@@ -12,8 +12,12 @@ body {
   font-family: "Varela Round", "Helvetica Neue", "Helvetica", "Arial", sans-serif;
 }
 
+.container {
+  width: 80%;
+}
+
 .text-babu, .icon-babu {
-  color: #00A699;
+  color: #5fb955;
 }
 
 //navbar
@@ -22,9 +26,10 @@ body {
 }
 
 .navbar-default .navbar-brand {
-  color: #00A699;
+  color: #5fb955;
   font-size: 2em;
   font-weight: 400;
+  padding: 20px;
 }
 
 // button
@@ -61,19 +66,19 @@ body {
 }
 
 .btn.btn-normal {
-  border: 1px solid #ff5a5f;
-  background-color: #ff5a5f;
+  border: 1px solid #a051a2;
+  background-color: #a051a2;
 }
 
 .btn.btn-normal:active {
   outline: none;
-  border-color: #e00007;
-  background-color: #e00007;
+  border-color: #812990;
+  background-color: #812990;
 }
 
 .btn.btn-form {
-  border: 1px solid #00A699;
-  background-color: #00A699;
+  border: 1px solid #5fb955;
+  background-color: #5fb955;
 }
 
 .btn.btn-form:active {
@@ -123,11 +128,11 @@ body {
 }
 .form-group input {
   height: 45px;
-  border: 1px solid #00A699;
+  border: 1px solid #5fb955;
 }
 
 .form-group textarea {
-  border: 1px solid #00A699;
+  border: 1px solid #5fb955;
 }
 
 .form-group input[type="radio"] {
@@ -143,7 +148,7 @@ body {
   width: 100%;
   color: #565a5c;
   background-color: white;
-  border: 1px solid #00A699;
+  border: 1px solid #5fb955;
   border-radius: 2px;
   padding: 10px;
   appearance: none;
@@ -155,7 +160,7 @@ body {
   content: '\25bc';
   font-size: 1.2em;
   position: absolute;
-  color: #00A699;
+  color: #5fb955;
   top: 30px;
   right: 30px;
   transform: scale(0.94, 0.62);
@@ -167,7 +172,7 @@ body {
   margin-bottom: -0.25em;
   margin-right: 5px;
   //vertical-align: top;
-  border: 1.5px solid #00A699;
+  border: 1.5px solid #5fb955;
   border-radius: 2px;
   appearance: none;
   -moz-appearance: none; /* Firefox */
@@ -179,7 +184,7 @@ body {
   content: '\2713';
   font-size: 1.2pm;
   position: absolute;
-  color: #00A699;
+  color: #5fb955;
   text-align: center;
   width: 1.25em;
 }
@@ -215,7 +220,7 @@ body {
 // panel
 .panel-default .panel-heading{
   color: #ffffff;
-  background-color: #00A699;
+  background-color: #5fb955;
   font-size: 18px;
   font-weight: 400;
 }

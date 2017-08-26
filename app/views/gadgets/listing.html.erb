@@ -1,0 +1,37 @@
+<div class="row">
+  <div class="col-md-3">
+    <%= render 'gadget_menu' %>
+  </div>
+  <div class="col-md-9">
+    <div class="panel panel-default">
+      <div class="panel-heading">
+        タイプ登録
+      </div>
+      <div class="panel-body">
+        <div class="container">
+          <%= form_for @gadget do |f| %>
+            <div class="row">
+              <div class="col-md-6 select">
+                <div class="form-group">
+                  <labal>ガジェットタイプ</labal>
+                  <%= f.select :gadget_type, [["ヘッドセット", "Head set"], ["ゲーム", "Gane"], ["アウトドア", "outdoor"]], id:"gadget_type", prompt: "選択...", class: "form-control" %>
+                </div>
+              </div>
+
+              <div class="col-md-6 select">
+                <div class="form-group">
+                  <labal>承認タイプ</labal>
+                  <%= f.select :instant, Gadget.instants.map { |key, value| [key.humanize, key]}, selected: 'Instant', prompt: "選択...", class: "form-control" %>
+                </div>
+              </div>
+
+            </div>
+
+            <div><%= f.submit "保存", class: "btn btn-normal" %></div>
+          <% end %>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</div>

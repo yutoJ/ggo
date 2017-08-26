@@ -10,19 +10,28 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170825163056) do
+ActiveRecord::Schema.define(version: 20170826042901) do
 
   create_table "gadgets", force: :cascade do |t|
     t.string   "gadget_type"
+    t.integer  "user_id",                      null: false
     t.text     "description"
     t.integer  "price"
-    t.integer  "owner",                        null: false
-    t.string   "city"
+    t.string   "address"
     t.boolean  "active",       default: false
-    t.integer  "instant",      default: 0
+    t.integer  "instant",      default: 1
     t.string   "listing_name"
     t.datetime "created_at",                   null: false
     t.datetime "updated_at",                   null: false
+    t.index ["user_id"], name: "index_gadgets_on_user_id"
+  end
+
+  create_table "photos", force: :cascade do |t|
+    t.integer  "gadget_id"
+    t.string   "image"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["gadget_id"], name: "index_photos_on_gadget_id"
   end
 
   create_table "reservations", force: :cascade do |t|
@@ -53,11 +62,13 @@ ActiveRecord::Schema.define(version: 20170825163056) do
 
   create_table "users", force: :cascade do |t|
     t.string   "name",                   default: "", null: false
+    t.string   "nickname"
     t.string   "phone_number"
-    t.text     "description"
+    t.text     "introduction"
     t.string   "provider"
     t.string   "uid"
     t.string   "image"
+    t.string   "address"
     t.string   "email",                  default: "", null: false
     t.string   "encrypted_password",     default: "", null: false
     t.string   "reset_password_token"

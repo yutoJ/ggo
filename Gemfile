@@ -25,7 +25,8 @@ gem 'jquery-ui-rails', '~> 5.0'
 #functions
 gem 'devise', '~> 4.2'
 gem 'toastr-rails', '~> 1.0'
-gem 'paperclip', '~> 5.1.0'
+gem 'carrierwave'
+gem 'rmagick'
 gem 'geocoder', '~> 1.4'
 gem 'ransack', '~> 1.7'
 gem 'twilio-ruby', '~> 4.11.1'
@@ -46,6 +47,7 @@ gem 'omniauth-facebook', '~> 4.0'
 gem 'omniauth-twitter'
 #storage
 gem 'aws-sdk', '~> 2.8'
+gem 'fog'
 
 group :development, :test do
   gem 'byebug', platform: :mri

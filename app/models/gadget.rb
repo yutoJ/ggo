@@ -1,4 +1,6 @@
 class Gadget < ApplicationRecord
-  belongs_to :owner, class_name: "User"
+  enum instant: {Request: 0, Instant: 1}
+  belongs_to :user
+  has_many :photos
   has_many :reservations
 end

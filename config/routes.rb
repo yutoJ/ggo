@@ -1,28 +1,34 @@
 Rails.application.routes.draw do
 
-
-  get 'reservations/your_reservation'
-
-  get 'reservations/your_rent'
-
-  get 'gadgets/index'
-
-  get 'gadgets/show'
-
-  get 'gadgets/update'
-
-  get 'gadgets/new'
-
-  get 'gadgets/create'
-
-  get 'users/show'
-
-  get 'users/index'
-
   root 'pages#home'
   get 'dashboard' => 'dashboards#index'
 
-  resources :users, only: [:index, :show]
+  resources :gadgets, except: [:edit] do
+    member do
+      get 'listing'
+      get 'pricing'
+      get 'description'
+      get 'photo_upload'
+      get 'location'
+      get 'preload'
+      get 'preview'
+    end
+    resources :reservations, only: [:create]
+  end
+
+  get '/your_rents' => 'reservations#your_rents'
+  get '/your_reservations' => 'reservations#your_reservations'
+
+
+  #resources :reservations, only: [:approve, :decline] do
+  #  member do
+  #    post '/approve' => "reservations#approve"
+  #    post '/decline' => "reservations#decline"
+  #  end
+  #nd
+
+  #resources :users, only: [:index, :show]
+  resources :users
   devise_for :users,
               path: '',
               path_names: {sign_in: 'login', sign_out: 'logout', edit: 'profile', sign_up: 'registration'},

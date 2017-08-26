@@ -1,2 +1,38 @@
-<h1>Gadgets#show</h1>
-<p>Find me in app/views/gadgets/show.html.erb</p>
+<div class="row">
+  <div class="vol-md-6">
+    <h1><%= @gadget.listing_name %></h1>
+        <%= @gadget.address %>
+  </div>
+  <div class="vol-md-6 text-center">
+    <%= image_tag avatar_url(@gadget.user), class: "img-circle avatar-large" %><br/><br/>
+    <%= @gadget.user.name %>
+  </div>
+</div>
+<div class="row text-babu">
+  <div class="row text-center row-space-1">
+    <div class="col-md-3">
+      <i class="fa fa-home fa-2x"></i>
+    </div>
+    <div class="col-md-3">
+      <i class="fa fa-user-circle-o fa-2x"></i>
+    </div>
+    <div class="col-md-3">
+      <i class="fa fa-bed fa-2x"></i>
+    </div>
+    <div class="col-md-3">
+      <i class="fa fa-bath fa-2x"></i>
+    </div>
+  </div>
+
+  <div class="row text-center">
+    <div class="col-md-3">1</div>
+    <div class="col-md-3">1</div>
+    <div class="col-md-3">1</div>
+    <div class="col-md-3">1</div>
+  </div>
+</div>
+<div class="row">
+  <div class="col-md-12">
+    <%= render 'reservations/form' %>
+  </div>
+</div>
