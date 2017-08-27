@@ -8,7 +8,10 @@ end
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '~> 5.0.4'
-gem 'sqlite3'
+
+gem 'sqlite3', groups: %w(test development), require: false
+gem 'pg', groups: %w(production), require: false
+
 gem 'puma', '~> 3.0'
 gem 'uglifier', '>= 1.3.0'
 gem 'turbolinks', '~> 5'
