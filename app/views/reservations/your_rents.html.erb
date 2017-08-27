@@ -24,7 +24,7 @@
               <% end %>
             </div>
             <div class="col-md-5">
-              <%= link_to rent.gadget.listing_name, gadget_path(rent.gadget) %><br/><br/>
+              <%= link_to rent.gadget.listing_name, gadget_path(rent.gadget), style: "width: 100%;" %><br/><br/>
               <span>
                 <%= image_tag avatar_url(rent.gadget.user), class: "img-circle avatar-small" %>
                 <%= link_to user_path(rent.gadget.user) do %>
