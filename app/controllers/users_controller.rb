@@ -4,7 +4,7 @@ class UsersController < ApplicationController
     @gadgets =@user.gadgets
 
     # Display all the guest reviews to host (if this user is a host)
-    @guest_reviews = Review.where(type: "GuestReview", host_id: @user.id)
+    @guest_reviews = Review.where(type: "GuestReview", owner_id: @user.id)
 
     # Display all the guest reviews to host (if this user is a host)
     @owner_reviews = Review.where(type: "OwnerReview", guest_id: @user.id)

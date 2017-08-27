@@ -1,31 +1,44 @@
 <div class="row">
-  <div class="col-md-6">
+  <div class="col-md-8">
     <h1><%= @gadget.listing_name %></h1>
     <%= image_tag @gadget.cover_photo(:thumb), style: "width: 100%;" %>
-    <%= @gadget.address %>
+    <hr/>
   </div>
-  <div class="col-md-6 text-center">
-    <%= image_tag avatar_url(@gadget.user), class: "img-circle avatar-large" %><br/><br/>
-    <%= @gadget.user.name %>
-
+  <div class="col-md-4">
+    <div class="text-center">
+      <%= image_tag avatar_url(@gadget.user), class: "img-circle avatar-large" %><br/><br/>
+      <%= @gadget.user.name %>
+    </div>
+    <hr/>
     <h2>About</h2>
     <%= @gadget.description %>
   </div>
 </div>
 <div class="row">
-  <div class="col-md-8 text-babu">
-    <div class="row text-center row-space-1">
-      <div class="col-md-6">
-        <i class="fa fa-home fa-2x"></i>
+  <div class="col-md-8">
+    <h2>配達範囲エリア</h2>
+    <%= @gadget.address %>
+    <hr/>
+    <div class="row text-center row-space-1 text-babu">
+      <div class="col-md-3">
+        <i class="fa fa-jpy fa-2x" aria-hidden="true"></i></i>
       </div>
-      <div class="col-md-6">
-        <i class="fa fa-user-circle-o fa-2x"></i>
+      <div class="col-md-3">
+        <i class="fa fa-star fa-2x" aria-hidden="true"></i>
+      </div>
+      <div class="col-md-3">
+        <i class="fa fa-book fa-2x" aria-hidden="true"></i>
+      </div>
+      <div class="col-md-3">
+        <i class="fa fa-handshake-o fa-2x" aria-hidden="true"></i>
       </div>
     </div>
 
     <div class="row text-center">
-      <div class="col-md-6">1</div>
-      <div class="col-md-6">1</div>
+      <div class="col-md-3"><%= @gadget.price %>円/1日</div>
+      <div class="col-md-3">カメラ付き</div>
+      <div class="col-md-3">空中動画撮影方法の動画付き</div>
+      <div class="col-md-3">チャットサポートあり</div>
     </div>
   </div>
 

@@ -49,15 +49,18 @@ ActiveRecord::Schema.define(version: 20170826042901) do
 
   create_table "reviews", force: :cascade do |t|
     t.text     "comment"
-    t.integer  "star",       default: 1
-    t.integer  "owner_id",               null: false
-    t.integer  "gadget_id",              null: false
-    t.integer  "guest_id",               null: false
-    t.datetime "created_at",             null: false
-    t.datetime "updated_at",             null: false
+    t.integer  "star",           default: 1
+    t.integer  "gadget_id"
+    t.integer  "reservation_id"
+    t.integer  "owner_id"
+    t.integer  "guest_id"
+    t.string   "type"
+    t.datetime "created_at",                 null: false
+    t.datetime "updated_at",                 null: false
     t.index ["gadget_id"], name: "index_reviews_on_gadget_id"
     t.index ["guest_id"], name: "index_reviews_on_guest_id"
     t.index ["owner_id"], name: "index_reviews_on_owner_id"
+    t.index ["reservation_id"], name: "index_reviews_on_reservation_id"
   end
 
   create_table "users", force: :cascade do |t|
