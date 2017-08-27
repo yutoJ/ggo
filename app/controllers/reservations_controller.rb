@@ -33,7 +33,7 @@ class ReservationsController < ApplicationController
   end
 
   def your_rents
-    @trips = current_user.reservations.order(start_date: :asc)
+    @rents = current_user.reservations.order(start_date: :asc)
   end
 
   def your_reservations
@@ -42,7 +42,7 @@ class ReservationsController < ApplicationController
 
   def approve
       @reservation.Approved!
-      ReservationMailer.send_email_to_guest(@reservation.user).deliver if reservation.user.setting.enable_email
+      #ReservationMailer.send_email_to_guest(@reservation.user).deliver if reservation.user.setting.enable_email
       redirect_to your_reservations_path
   end
 

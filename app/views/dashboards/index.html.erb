@@ -1,2 +1,41 @@
-<h1>Dashboards#index</h1>
-<p>Find me in app/views/dashboards/index.html.erb</p>
+<div class="row">
+  <div class="col-md-3">
+    <div class="center">
+      <%= image_tag avatar_url(current_user), class: "avatar-full" %>
+    </div>
+    <div class="panel panel-default">
+      <div class="panel-heading">
+        <%= current_user.name %>
+      </div>
+      <div class="panel-body">
+        <ul class="sidebar-list">
+          <!-- TODO fix it -->
+          <% if current_user.email %>
+            <li>メール<span class="pull-right icon-babu"><i class="fa fa-check-circle-o"></i></span></li>
+          <% end %>
+          <!-- TODO fix it -->
+
+            <li>Facebook<span class="pull-right icon-babu"><i class="fa fa-check-circle-o"></i></span></li>
+
+          <li>電話番号<span class="pull-right icon-babu"><i class="fa fa-check-circle-o"></i></span></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+  <div class="col-md-9">
+    <!-- Notification -->
+    <div class="panel panel-default">
+      <div class="panel-heading">通知</div>
+      <div class="panel-body">
+
+      </div>
+    </div>
+
+    <div class="panel panel-default">
+      <div class="panel-heading">あなたのガジェット (<%= @gadgets.length %>)</div>
+      <div class="panel-body">
+        <%= render partial: "gadgets/gadgets_list", locals: {gadgets: @gadgets} %>
+      </div>
+    </div>
+  </div>
+</div>

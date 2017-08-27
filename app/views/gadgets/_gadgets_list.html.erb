@@ -1,0 +1,22 @@
+
+<% @gadgets.each do |gadget| %>
+<div class="col-md-4">
+  <div class="panel panel-default">
+    <div class="panel-heading preview">
+      <%= image_tag gadget.cover_photo(:medium) %>
+    </div>
+    <div class="panel-body">
+      <%= link_to gadget.listing_name, gadget %><br/>
+      <%= gadget.price %>円/1日 - <%= gadget.gadget_type %>
+      <div id="star_<%= gadget.id %>"></div> <%= pluralize(gadget.average_rating, "review") %>
+    </div>
+  </div>
+</div>
+  <script>
+    $('#star_<%= gadget.id %>').raty({
+      path: '/assets',
+      readOnly: true,
+      score: <%= gadget.average_rating %>
+    });
+  </script>
+<% end %>

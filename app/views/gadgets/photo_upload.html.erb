@@ -11,7 +11,7 @@
         <div class="container">
           <div class="row">
             <div class="col-md-offset-3 col-md-6">
-              <%= form_for @gadget, url: photo_upload_gadget_path(@gadget), method: 'post', html: {multipart: true} do |f| %>
+              <%= form_for @gadget, url: gadget_photos_path(@gadget), method: 'post', html: {multipart: true} do |f| %>
               <div class="row">
                 <div class="form-group">
                   <span class="btn btn-default btn-file text-babu">

@@ -67,7 +67,8 @@ ActiveRecord::Schema.define(version: 20170826042901) do
     t.text     "introduction"
     t.string   "provider"
     t.string   "uid"
-    t.string   "image"
+    t.string   "sns_image"
+    t.string   "local_image"
     t.string   "address"
     t.string   "email",                  default: "", null: false
     t.string   "encrypted_password",     default: "", null: false

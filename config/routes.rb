@@ -14,18 +14,21 @@ Rails.application.routes.draw do
       get 'preview'
     end
     resources :reservations, only: [:create]
+    resources :photos, only: [:create, :destroy]
   end
 
   get '/your_rents' => 'reservations#your_rents'
   get '/your_reservations' => 'reservations#your_reservations'
 
+  resources :guest_reviews, only: [:create, :destroy]
+  resources :owner_reviews, only: [:create, :destroy]
 
-  #resources :reservations, only: [:approve, :decline] do
-  #  member do
-  #    post '/approve' => "reservations#approve"
-  #    post '/decline' => "reservations#decline"
-  #  end
-  #nd
+  resources :reservations, only: [:approve, :decline] do
+    member do
+      post '/approve' => "reservations#approve"
+      post '/decline' => "reservations#decline"
+    end
+  end
 
   #resources :users, only: [:index, :show]
   resources :users
