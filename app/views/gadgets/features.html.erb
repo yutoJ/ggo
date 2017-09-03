@@ -1,0 +1,46 @@
+<div class="row">
+  <div class="col-md-3">
+    <%= render 'gadget_menu' %>
+  </div>
+  <div class="col-md-9">
+    <div class="panel panel-default">
+      <div class="panel-heading">
+        付属
+      </div>
+      <div class="panel-body">
+        <div class="container">
+          <%= form_for @gadget do |f| %>
+
+          <div class="row form-group">
+            <div class="col-md-4">
+              <%= f.check_box :has_guarantee %> 保証
+            </div>
+            <div class="col-md-4">
+              <%= f.check_box :has_manual %> 手作り説明書
+            </div>
+            <div class="col-md-4">
+              <%= f.check_box :has_content %> コンテンツ
+            </div>
+          </div>
+
+          <div class="row form-group">
+            <div class="col-md-4">
+              <%= f.check_box :has_battery %> 充電器
+            </div>
+            <div class="col-md-4">
+              <%= f.check_box :has_no_setup %> セットアップ済み
+            </div>
+          </div>
+          <br/><br/>
+
+          <div class="text-center">
+            <%= f.submit "保存", class: "btn btn-form" %>
+          </div>
+
+          <% end %>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</div>

@@ -12,6 +12,8 @@ Rails.application.routes.draw do
       get 'location'
       get 'preload'
       get 'preview'
+      get 'features'
+      get 'requirements'
     end
     resources :reservations, only: [:create]
     resources :photos, only: [:create, :destroy]

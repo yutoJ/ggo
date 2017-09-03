@@ -10,19 +10,26 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170826042901) do
+ActiveRecord::Schema.define(version: 20170903100749) do
 
   create_table "gadgets", force: :cascade do |t|
     t.string   "gadget_type"
-    t.integer  "user_id",                      null: false
+    t.integer  "user_id",                         null: false
     t.text     "description"
     t.integer  "price"
     t.string   "address"
-    t.boolean  "active",       default: false
-    t.integer  "instant",      default: 1
+    t.boolean  "active",          default: false
+    t.integer  "instant",         default: 1
     t.string   "listing_name"
-    t.datetime "created_at",                   null: false
-    t.datetime "updated_at",                   null: false
+    t.datetime "created_at",                      null: false
+    t.datetime "updated_at",                      null: false
+    t.boolean  "has_guarantee"
+    t.boolean  "has_manual"
+    t.boolean  "has_content"
+    t.boolean  "has_no_setup"
+    t.boolean  "has_battery"
+    t.string   "require_mobile"
+    t.string   "require_account"
     t.index ["user_id"], name: "index_gadgets_on_user_id"
   end
 

@@ -10,10 +10,16 @@
     <% end %>
   </li>
   <li class="sidebar-item">
-    <%= link_to "ガジェット詳細", description_gadget_path, class: "sidebar-link active" %>
+    <%= link_to "ガジェット説明", description_gadget_path, class: "sidebar-link active" %>
     <% if !@gadget.listing_name.blank? %>
       <span class="pull-right text-babu"><i class="fa fa-check"></i></span>
     <% end %>
+  </li>
+  <li class="sidebar-item">
+    <%= link_to "特徴", features_gadget_path, class: "sidebar-link active" %>
+
+      <span id="photo_check" class="pull-right text-babu"><i class="fa fa-check"></i></span>
+
   </li>
   <li class="sidebar-item">
     <%= link_to "写真", photo_upload_gadget_path, class: "sidebar-link active" %>
@@ -21,7 +27,12 @@
       <span id="photo_check" class="pull-right text-babu"><i class="fa fa-check"></i></span>
     <% end %>
   </li>
+  <li class="sidebar-item">
+    <%= link_to "条件", requirements_gadget_path, class: "sidebar-link active" %>
 
+      <span id="photo_check" class="pull-right text-babu"><i class="fa fa-check"></i></span>
+
+  </li>
   <li class="sidebar-item">
     <%= link_to "宅配エリア", location_gadget_path, class: "sidebar-link active" %>
     <% if !@gadget.address.blank? %>

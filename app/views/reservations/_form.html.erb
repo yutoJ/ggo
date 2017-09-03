@@ -1,7 +1,7 @@
 <div class="panel panel-default">
   <div class="panel-heading">
-    <span><% if @gadget.Instant? %><i class="fa fa-bolt" style="color: #ffb400"></i> <% end %> $<%= @gadget.price %></span>
-    <span class="pull-right">Per Night</span>
+    <span><% if @gadget.Instant? %><i class="fa fa-bolt" style="color: #ffb400"></i> <% end %> <%= @gadget.price %>円</span>
+    <span class="pull-right">per night</span>
   </div>
   <div class="panel-body">
     <%= form_for [@gadget, @gadget.reservations.new] do |f| %>
@@ -21,15 +21,15 @@
         <table class="reservation-table">
           <tbody>
             <tr>
-              <td>Price</td>
+              <td>レンタル料</td>
               <td class="text-right">$<%= @gadget.price %></td>
             </tr>
               <tr>
-                <td>Nights(s)</td>
+                <td>日数</td>
                 <td class="text-right">x <span id="reservation_nights"></span></td>
               </tr>
               <tr>
-                <td class="total">Total</td>
+                <td class="total">合計</td>
                 <td class="text-right">$<span id="reservation_total"></span></td>
               </tr>
           </tbody>
@@ -39,9 +39,9 @@
       <br/>
 
       <% if @gadget.Instant? %>
-        <%= f.submit "Book Now", id: "btn_book", class: "btn btn-normal btn-block", disabled: true %>
+        <%= f.submit "予約", id: "btn_book", class: "btn btn-normal btn-block", disabled: true %>
       <% else %>
-        <%= f.submit "Request Now", id: "btn_book", class: "btn btn-normal btn-block", disabled: true %>
+        <%= f.submit "リクエスト", id: "btn_book", class: "btn btn-normal btn-block", disabled: true %>
       <% end %>
     <% end %>
   </div>

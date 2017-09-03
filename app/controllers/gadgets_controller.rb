@@ -42,6 +42,12 @@ class GadgetsController < ApplicationController
   def description
   end
 
+  def features
+  end
+
+  def requirements
+  end
+
   def photo_upload
     @photos = @gadget.photos
   end
@@ -80,7 +86,7 @@ class GadgetsController < ApplicationController
   end
 
   def gadget_params
-    params.require(:gadget).permit(:gadget_type, :listing_name, :address, :price, :active, :instant, :description)
+    params.require(:gadget).permit(:gadget_type, :listing_name, :address, :price, :active, :instant, :description, :has_guarantee, :has_manual, :has_content, :has_no_setup, :has_battery, :require_mobile, :require_account)
   end
 
   def is_ready_room
