@@ -1,39 +1,100 @@
 <div class="row">
-  <div class="col-md-7 banner">
-    <h1><span class="text-red">新しいテクノロジーを借りてみよう！</span></h1>
+  <div class="col-md-12 banner">
+    <h1><span class="text-red">新しいテクノロジーを体験しよう！</span></h1>
   </div>
 </div>
 
 <%= form_tag root_path, method: :get do %>
   <div class="row">
     <div class="col-md-6">
-      <%= text_field_tag :search, params[:search], placeholder: "Where are you going?", class: "form-control", id: "autolocation" %>
+      <%= text_field_tag :search, params[:search], placeholder: "ガジェット検索", class: "form-control", id: "autolocation" %>
     </div>
     <div class="col-md-3">
-      <%= text_field_tag :start_date, params[:start_date], placeholder: "Start Date", class: "form-control datepicker" %>
+      <%= text_field_tag :start_date, params[:start_date], placeholder: "レンタル開始日", class: "form-control datepicker" %>
     </div>
     <div class="col-md-3">
-      <%= text_field_tag :end_date, params[:end_date], placeholder: "End Date", class: "form-control datepicker" %>
+      <%= text_field_tag :end_date, params[:end_date], placeholder: "レンタル終了日", class: "form-control datepicker" %>
     </div>
   </div>
   <br/><br/>
 
   <div class="row">
     <div class="col-md-offset-4 col-md-4">
-      <%= submit_tag "Search", class: "btn btn-normal btn-block" %>
+      <%= submit_tag "SEARCH", class: "btn btn-normal btn-block" %>
     </div>
   </div>
 <% end %>
-
 <br/><hr/><br/>
 
 <!-- HOMES -->
-<div><h3>Homes</h3></div>
+<div><h3>新着ガジェット</h3></div>
 <br/>
 
 <div class="row">
   <%= render partial: "gadgets/gadgets_list", locals: {gadgets: @gadgets} %>
 </div>
+
+<!-- TECHS -->
+<div><h3>テクノロジー</h3></div>
+<br/>
+
+<div class="row">
+  <div class="col-md-4 col-sm-12">
+    <a href="#" class="discovery">
+      <%= image_tag 'vr.jpg', class: "discovery-card img-rounded" %>
+      <div class="middle">
+        VR
+      </div>
+    </a>
+  </div>
+  <div class="col-md-4 col-sm-12">
+    <a href="#" class="discovery">
+      <%= image_tag 'drone.jpg', class: "discovery-card img-rounded" %>
+      <div class="middle">
+        DRONE
+      </div>
+    </a>
+  </div>
+  <div class="col-md-4 col-sm-12">
+    <a href="#" class="discovery">
+      <%= image_tag 'camera.jpg', class: "discovery-card img-rounded" %>
+      <div class="middle">
+        CAMERA
+      </div>
+    </a>
+  </div>
+</div>
+<br />
+<div class="row">
+  <div class="col-md-4 col-sm-12">
+    <a href="#" class="discovery">
+      <%= image_tag 'smart-watch.jpg', class: "discovery-card img-rounded" %>
+      <div class="middle">
+        WATCH
+      </div>
+    </a>
+  </div>
+  <div class="col-md-4 col-sm-12">
+    <a href="#" class="discovery">
+      <%= image_tag 'game.jpg', class: "discovery-card img-rounded" %>
+      <div class="middle">
+        GAME
+      </div>
+    </a>
+  </div>
+  <div class="col-md-4 col-sm-12">
+    <a href="#" class="discovery">
+      <%= image_tag 'robot.jpg', class: "discovery-card img-rounded" %>
+      <div class="middle">
+        ROBOT
+      </div>
+    </a>
+  </div>
+</div>
+
+<!--  -->
+<div><h3>サービスについて</h3></div>
+<br/>
 
 
 <script>
