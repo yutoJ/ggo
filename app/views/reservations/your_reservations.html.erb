@@ -15,8 +15,8 @@
         <% @gadgets.each do |gadget| %>
           <% gadget.reservations.each do |reservation| %>
             <div class="row">
-              <div class="col-md-2">
-                <%= reservation.start_date.strftime('%v') %>
+              <div class="col-md-3">
+                <%= date_japan(reservation.start_date) %>
                 <p><%= reservation.status %></p>
                 <div class="form-inline">
                   <% if reservation.Waiting? %>
@@ -27,10 +27,10 @@
               </div>
               <div class="col-md-2">
                 <%= link_to gadget_path(reservation.gadget) do %>
-                  <%= image_tag reservation.gadget.cover_photo(:thumb), style: "width: 100%;" %>
+                  <%= image_tag reservation.gadget.cover_photo(:medium), style: "width: 100%;", class: "img-rounded" %>
                 <% end %>
               </div>
-              <div class="col-md-5">
+              <div class="col-md-3">
                 <%= link_to reservation.gadget.listing_name, gadget_path(reservation.gadget) %><br/><br/>
                 <span>
                   <%= link_to user_path(reservation.user) do %>
@@ -39,7 +39,7 @@
                   <% end %>
                 </span>
               </div>
-              <div class="col-md-3 text-right">
+              <div class="col-md-4 text-center">
                 <%= render partial: "reviews/owner_form", locals: {reservation: reservation} if reservation.Approved? %>
               </div>
             </div>

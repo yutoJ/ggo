@@ -3,9 +3,7 @@ class Gadget < ApplicationRecord
   belongs_to :user
   has_many :photos
   has_many :reservations
-
   has_many :guest_reviews
-
 
   def cover_photo(size)
 

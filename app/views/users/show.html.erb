@@ -32,22 +32,22 @@
       <%= @user.introduction %>
     </div>
 
-    <h4>あなたのガジェット (0)</h4><br/>
+    <h4>あなたのガジェット (<%= @gadgets.length %>)</h4><br/>
 
     <div class="row">
       <%= render partial: "gadgets/gadgets_list", locals: {gadgets: @gadgets} %>
     </div>
     <br/>
 
-    <h4>ゲストからのレビュー (0)</h4>
+    <h4>ゲストからのレビュー (<%= @guest_reviews.count %>)</h4>
     <div class="row">
       <%= render "reviews/guest_list" %>
     </div>
     <br/>
 
-    <h4>ホストからのレビュー (0)</h4>
+    <h4>ホストからのレビュー (<%= @owner_reviews.count %>)</h4>
     <div class="row">
-      <%= render "reviews/guest_list" %>
+      <%= render "reviews/owner_list" %>
     </div>
 
   </div>

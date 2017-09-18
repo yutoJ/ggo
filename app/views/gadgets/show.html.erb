@@ -5,17 +5,19 @@
     <hr/>
   </div>
   <div class="col-md-4">
+    <h2>ホスト</h2>
     <div class="text-center">
-      <%= image_tag avatar_url(@gadget.user), class: "img-circle avatar-large" %><br/><br/>
-      <%= @gadget.user.name %>
+      <%= image_tag avatar_url(@gadget.user), class: "img-circle avatar-xlarge" %><br/><br/>
+      <%= link_to @gadget.user.name, user_path(@gadget.user) %>
     </div>
     <hr/>
-    <h2>About</h2>
-    <%= @gadget.description %>
   </div>
 </div>
 <div class="row">
   <div class="col-md-8">
+    <h2>About</h2>
+    <%= @gadget.description %>
+    <hr />
     <h2>配達範囲エリア</h2>
     <%= @gadget.address %>
     <hr/>
