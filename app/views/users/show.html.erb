@@ -39,12 +39,13 @@
     </div>
     <br/>
 
+    <hr />
     <h4>ゲストからのレビュー (<%= @guest_reviews.count %>)</h4>
     <div class="row">
       <%= render "reviews/guest_list" %>
     </div>
     <br/>
-
+    <hr />
     <h4>ホストからのレビュー (<%= @owner_reviews.count %>)</h4>
     <div class="row">
       <%= render "reviews/owner_list" %>
