@@ -3,7 +3,7 @@
     <div class="text-center">
       <%= image_tag avatar_url(@user), class: "avatar-full" %>
       <% if current_user && current_user != @user %>
-        <%= link_to "Send Message", root_path, method: :post, class: "btn btn-default" %>
+        <%= link_to "チャットで質問する", conversations_path(sender_id: current_user.id, recipient_id: @user.id), method: :post, class: "btn btn-default" %>
       <% end %>
     </div>
     <br/>

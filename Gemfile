@@ -38,6 +38,7 @@ gem 'momentjs-rails', '~>2.17.1'
 
 #support
 gem 'enum_help'
+gem 'pusher'
 
 #test
 gem 'faker'

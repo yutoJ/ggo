@@ -32,8 +32,8 @@ Rails.application.routes.draw do
     end
   end
 
-  #resources :users, only: [:index, :show]
-  resources :users
+  resources :users, only: [:index, :show]
+
   devise_for :users,
               path: '',
               path_names: {sign_in: 'login', sign_out: 'logout', edit: 'profile', sign_up: 'registration'},
@@ -43,4 +43,11 @@ Rails.application.routes.draw do
   if Rails.env.development?
     mount LetterOpenerWeb::Engine, at: "/letter_opener"
   end
+
+  resources :conversations, only: [:index, :create] do
+    resources :messages, only: [:index, :create]
+  end
+
+  get 'notifications/index'
+
 end

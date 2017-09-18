@@ -27,6 +27,12 @@
           <li><%= link_to "ログイン", new_user_session_path %></li>
           <li><%= link_to "ユーザー登録", new_user_registration_path %></li>
         <% else %>
+          <li>
+            <%= link_to notifications_index_path do %>
+              <i class="fa fa-bell fa-2x icon-babu"></i>
+              <span class="badge" id="navbar_num_of_unread"><%= @notifications_count if @notifications_count > 0 %></span>
+            <% end %>
+          </li>
           <li class="dropdown">
             <a href="#" class="dropdown-toggle" data-toggle="dropdown"
               role="button" aria-haspopup="true" aria-expanded="false">
@@ -50,11 +56,12 @@
 </nav>
 
 <% if (user_signed_in?) && !current_page?(root_path) %>
-  <nav class="navbar navbar-default" style="background-color: #565A5C">
+  <nav class="navbar navbar-default" style="background-color: #C1E1A6">
     <div class="container">
       <ul class="nav navbar-nav">
         <li <% if current_page?(dashboard_path) %> class="active" <% end %> ><%= link_to "ダッシュボード", dashboard_path %></li>
         <li <% if current_page?(gadgets_path) %> class="active" <% end %> ><%= link_to "あなたのガジェット", gadgets_path %></li>
+        <li <% if current_page?(conversations_path) %> class="active" <% end %> ><%= link_to "メッセージ", conversations_path %></li>
       </ul>
     </div>
   </nav>

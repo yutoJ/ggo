@@ -1,0 +1,13 @@
+<% unless message.user.nil? %>
+  <div class="panel">
+    <div class="panel-body">
+      <%= image_tag avatar_url(message.user), class: "img-cirble avatar-medium" %>
+      <strong><%= message.user.name %></strong>
+      <span class="pull-right"><%= date_japan(message.created_at) %></span>
+      <br/>
+      <div class="row-space-2">
+        <%= message.body %>
+      </div>
+    </div>
+  </div>
+<% end %>
