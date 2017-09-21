@@ -116,7 +116,13 @@ body {
   background: white;
   display: block;
 }
-
+// notification icon
+.badge {
+  background-color: #FF5A5F;
+  position: relative;
+  top: -15px;
+  left: -5px;
+}
 // form
 .form-group {
   margin-bottom: 20px;
@@ -219,6 +225,7 @@ body {
 
 //HOME
 
+
 .discovery-card {
   background-size: cover;
   background-position: center;
@@ -243,7 +250,10 @@ body {
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  -ms-transform: translate(-50%, -50%)
+  -ms-transform: translate(-50%,-50%);
+  -webkit-transform: translate(-50%,-50%);
+  margin:0;
+  padding:0;
 }
 
 .discovery:hover .middle {

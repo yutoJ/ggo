@@ -11,6 +11,25 @@
     <link href="https://fonts.googleapis.com/css?family=Varela+Round" rel="stylesheet">
     <%= stylesheet_link_tag "jquery-ui", :media => "all" %>
 
+    <script src="https://js.pusher.com/4.1/pusher.min.js"></script>
+    <% if user_signed_in? %>
+      <script>
+        var pusher = new Pusher('<%= ENV["PUSHER_KEY"] %>',{
+          encrypted: true,
+          cluster: 'ap1'
+        });
+
+        var channel = pusher.subscribe('user_<%= current_user.id %>_channel');
+        channel.bind('notify_message', function(data) {
+          alert(data.message);
+        });
+
+        channel.bind('notify_unread', function(data) {
+          $('#unread_count').html(data.unread_counts);
+        });
+      </script>
+    <% end %>
+
   </head>
 
   <body>

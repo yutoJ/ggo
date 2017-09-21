@@ -19,8 +19,11 @@
                     <%= date_japan(conversation.messages.last.created_at) %>
                   </div>
                   <div class="col-md-8">
-                    <%= conversation.messages.last.context %>
+                    <%= conversation.messages.last.body %>
                   </div>
+                <% end %>
+                <% if @over_ten  %>
+                  <%= link_to '以前のメッセージ', '?m=all' %>
                 <% end %>
               </div>
 

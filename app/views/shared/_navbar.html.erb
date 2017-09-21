@@ -28,9 +28,9 @@
           <li><%= link_to "ユーザー登録", new_user_registration_path %></li>
         <% else %>
           <li>
-            <%= link_to notifications_index_path do %>
-              <i class="fa fa-bell fa-2x icon-babu"></i>
-              <span class="badge" id="navbar_num_of_unread"><%= @notifications_count if @notifications_count > 0 %></span>
+            <%= link_to notifications_index_path, class: "navbar-brand" do %>
+              <i class="fa fa-bell fa-lg icon-babu"></i>
+              <span class="badge" id="unread_count"><%= @notifications_count if @notifications_count > 0 %></span>
             <% end %>
           </li>
           <li class="dropdown">

@@ -31,7 +31,16 @@ class MessagesController < ApplicationController
 
   def create
     @message = @conversation.messages.build(message_params)
+    recipient_user = @conversation.target_user(current_user)
     if @message.save
+      @notification = @message.notifications.build(user_id: recipient_user.id)
+      @notification.save
+      Pusher.trigger("user_#{recipient_user.id}_channel", 'notify_message', {
+          message: 'あなたにメッセージが届いています'
+        })
+      Pusher.trigger("user_#{recipient_user.id}_channel", 'notify_unread', {
+          unread_counts: Notification.where(user_id: recipient_user.id, read: false).count
+        })
       redirect_to conversation_messages_path(@conversation)
     end
   end
