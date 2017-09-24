@@ -5,24 +5,24 @@
 </div>
 
 <%= form_tag root_path, method: :get do %>
-  <div class="row">
-    <div class="col-md-6">
-      <%= text_field_tag :search, params[:search], placeholder: "ガジェット検索", class: "form-control", id: "autolocation" %>
-    </div>
-    <div class="col-md-3">
-      <%= text_field_tag :start_date, params[:start_date], placeholder: "レンタル開始日", class: "form-control datepicker" %>
-    </div>
-    <div class="col-md-3">
-      <%= text_field_tag :end_date, params[:end_date], placeholder: "レンタル終了日", class: "form-control datepicker" %>
-    </div>
+<div class="row">
+  <div class="col-md-6">
+    <%= text_field_tag :search, params[:search], placeholder: "ガジェット検索", class: "form-control", id: "autolocation" %>
   </div>
-  <br/><br/>
+  <div class="col-md-3">
+    <%= text_field_tag :start_date, params[:start_date], placeholder: "レンタル開始日", class: "form-control datepicker" %>
+  </div>
+  <div class="col-md-3">
+    <%= text_field_tag :end_date, params[:end_date], placeholder: "レンタル終了日", class: "form-control datepicker" %>
+  </div>
+</div>
+<br/><br/>
 
-  <div class="row">
-    <div class="col-md-offset-4 col-md-4">
-      <%= submit_tag "SEARCH", class: "btn btn-normal btn-block" %>
-    </div>
+<div class="row">
+  <div class="col-md-offset-4 col-md-4">
+    <%= submit_tag "SEARCH", class: "btn btn-normal btn-block" %>
   </div>
+</div>
 <% end %>
 <br/><hr/><br/>
 
@@ -81,32 +81,84 @@
 </div>
 
 <!--  -->
-<div><h3>サービスについて</h3></div>
-<br/>
+<section class="content-section-b">
 
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-6">
+        <hr class="section-heading-spacer">
+        <div class="clearfix"></div>
+        <h2 class="section-heading">サービスについて</h2>
+        <p class="lead">あなたの家に眠っているガジェットはありませんか？</p>
+      </div>
+      <div class="col-lg-6">
+        <%= image_tag 'no-image.jpg', class: "img-fluid" %>
+      </div>
+    </div>
+
+  </div>
+  <!-- /.container -->
+</section>
+<section class="content-section-a">
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-12 text-center">
+        <h2 class="section-heading">レンタル</h2>
+        <h3 class="section-subheading text-muted">3つのステップで最新ガジェットがあなたの家に届きます</h3>
+      </div>
+    </div>
+    <div class="row text-center">
+      <div class="col-md-4">
+        <span class="fa-stack fa-4x">
+          <i class="fa fa-circle fa-stack-2x text-primary"></i>
+          <i class="fa fa-search fa-stack-1x fa-inverse"></i>
+        </span>
+        <h4 class="service-heading">検索</h4>
+        <p class="text-muted">まずはあなたの興味のあるガジェットを探して見ましょう。</p>
+      </div>
+      <div class="col-md-4">
+        <span class="fa-stack fa-4x">
+          <i class="fa fa-circle fa-stack-2x text-primary"></i>
+          <i class="fa fa-calendar fa-stack-1x fa-inverse"></i>
+        </span>
+        <h4 class="service-heading">予約</h4>
+        <p class="text-muted">あなたの借りたい日にあわせて予約して見ましょう。</p>
+      </div>
+      <div class="col-md-4">
+        <span class="fa-stack fa-4x">
+          <i class="fa fa-circle fa-stack-2x text-primary"></i>
+          <i class="fa fa-truck fa-stack-1x fa-inverse"></i>
+        </span>
+        <h4 class="service-heading">受け取り</h4>
+        <p class="text-muted">当日朝8時にあなたのお家へ届けます</p>
+      </div>
+    </div>
+  </div>
+</section>
+<br />
 
 <script>
-  $('#start_date').datepicker({
-    dateFormat: 'dd-mm-yy',
-    minDate: 0,
-    maxDate: '3m',
-    onSelect: function(selected) {
-      $('#end_date').datepicker("option", "minDate", selected);
-      $('#end_date').attr("disabled", false);
-    }
-  });
+$('#start_date').datepicker({
+  dateFormat: 'dd-mm-yy',
+  minDate: 0,
+  maxDate: '3m',
+  onSelect: function(selected) {
+    $('#end_date').datepicker("option", "minDate", selected);
+    $('#end_date').attr("disabled", false);
+  }
+});
 
-  $('#end_date').datepicker({
-    dateFormat: 'dd-mm-yy',
-    minDate: 0,
-    maxDate: '3m',
+$('#end_date').datepicker({
+  dateFormat: 'dd-mm-yy',
+  minDate: 0,
+  maxDate: '3m',
 
-    onSelect: function(selected) {
-      $('#start_date').datepicker("option", "maxDate", selected);
-    }
-  });
+  onSelect: function(selected) {
+    $('#start_date').datepicker("option", "maxDate", selected);
+  }
+});
 
-  $(function() {
-    $("#autolocation").geocomplete();
-  })
+$(function() {
+  $("#autolocation").geocomplete();
+})
 </script>

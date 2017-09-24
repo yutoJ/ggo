@@ -4,12 +4,30 @@
 @import "font-awesome-sprockets";
 @import "font-awesome";
 @import "fullcalendar";
+@import "partials/*"; // glob importing
 
 // whole style
+html {
+  position: relative;
+  min-height: 100%;
+}
+
 body {
   color: #565a5c;
   background-color: #F6F6F6;
   font-family: "Varela Round", "Helvetica Neue", "Helvetica", "Arial", sans-serif;
+}
+
+footer {
+  width: 100%;
+  background-color:#c4c4c4;
+  padding: 20px 0 10px 0;
+  color: white;
+  margin: auto;
+  padding-bottom: 10px;
+  font-size: 12px;
+  position: absolute;
+  bottom: 0;
 }
 
 .container {
@@ -224,7 +242,6 @@ body {
 }
 
 //HOME
-
 
 .discovery-card {
   background-size: cover;
