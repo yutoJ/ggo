@@ -44,8 +44,6 @@ gem 'pusher'
 gem 'faker'
 
 #debug
-gem 'pry-rails'
-gem 'better_errors'
 gem 'rails_12factor', group: :production
 
 #auth
@@ -71,6 +69,8 @@ group :development do
   gem 'spring'
   gem 'spring-watcher-listen', '~> 2.0.0'
   gem 'letter_opener_web'
+  gem 'pry-rails'
+  gem 'better_errors'
 end
 
 gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]

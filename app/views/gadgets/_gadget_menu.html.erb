@@ -16,7 +16,7 @@
     <% end %>
   </li>
   <li class="sidebar-item">
-    <%= link_to "特徴", features_gadget_path, class: "sidebar-link active" %>
+    <%= link_to "付属品", features_gadget_path, class: "sidebar-link active" %>
 
       <span id="photo_check" class="pull-right text-babu"><i class="fa fa-check"></i></span>
 
@@ -43,7 +43,6 @@
 <hr/>
 
 <% is_ready = !@gadget.active && !@gadget.price.blank? && !@gadget.listing_name.blank? && !@gadget.photos.blank? && !@gadget.address.blank? %>
-
 <%= form_for @gadget do |f| %>
   <%= f.hidden_field :active, value: true %>
   <%= f.submit "公開", id: "publish_button", class: "btn btn-normal btn-block", disabled: !is_ready %>

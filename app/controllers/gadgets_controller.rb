@@ -20,7 +20,9 @@ class GadgetsController < ApplicationController
   end
 
   def update
-    updated_params = is_ready_room ? gadget_params : gadget_params.merge(active: true)
+    updated_params = gadget_params
+    updated_params = gadget_params.merge(active: true) if is_ready_gadget
+    
     if @gadget.update(updated_params)
       flash[:notice] = "保存しました"
     else
@@ -89,7 +91,7 @@ class GadgetsController < ApplicationController
     params.require(:gadget).permit(:gadget_type, :listing_name, :address, :price, :active, :instant, :description, :has_guarantee, :has_manual, :has_content, :has_no_setup, :has_battery, :require_mobile, :require_account)
   end
 
-  def is_ready_room
-    !@gadget.active && !@gadget.price.blank? && !@gadget.listing_name.blank? && !@gadget.photos.blank? && !@gadget.address.blank?
+  def is_ready_gadget
+    @gadget.active && !@gadget.price.blank? && !@gadget.listing_name.blank? && !@gadget.photos.blank? && !@gadget.address.blank?
   end
 end
