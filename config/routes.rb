@@ -15,7 +15,7 @@ Rails.application.routes.draw do
       get 'features'
       get 'requirements'
     end
-    resources :reservations, only: [:create]
+    resources :reservations, only: [:create, :accept_reservation]
     resources :photos, only: [:create, :destroy]
   end
 

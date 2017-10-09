@@ -19,15 +19,16 @@ class ReservationsController < ApplicationController
 
       if @reservation.save
         if gadget.Request?
-          flash[:notice] = "予約リクエストを送りました"
+          render "accept_reservation", locals: { message: "予約リクエストを送りました。連絡をお待ちください" }
+          return
         else
           @reservation.Approved!
-          flash[:notice] = "予約が完了しました"
+          render "accept_reservation", locals: { message: "予約が完了しました" }
+          return
         end
       else
         flash[:alert] = "申し訳ございません、予約ができませんでした"
       end
-
     end
     redirect_to gadget
   end

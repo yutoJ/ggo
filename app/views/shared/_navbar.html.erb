@@ -8,12 +8,12 @@
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
       </button>
-      <%= link_to "Gadget Go(β版)", root_path, class: "navbar-brand" %>
+      <%= link_to "Gadget Go", root_path, class: "navbar-brand" %>
     </div>
     <div id="navbar" class="navbar-collapse collapse">
       <%= form_tag root_path, class: "navbar-form navbar-left", method: :get do %>
         <div class="form-group">
-          <%= text_field_tag :search, params[:search], placeholder: "なんでも検索", class: "form-control" %>
+          <%= text_field_tag :search, params[:search], placeholder: "検索", class: "form-control" %>
         </div>
       <% end %>
       <ul class="nav navbar-nav navbar-right">
