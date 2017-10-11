@@ -10,56 +10,73 @@
       <%= image_tag avatar_url(@gadget.user), class: "img-circle avatar-xlarge" %><br/><br/>
       <%= link_to @gadget.user.name, user_path(@gadget.user) %>
     </div>
+    <hr />
+      <%= @gadget.user.introduction %>
     <hr/>
   </div>
 </div>
 <div class="row">
   <div class="col-md-8">
-    <h2>About</h2>
+    <h2>紹介</h2>
     <%= @gadget.description %>
     <hr />
-    <h2>配達範囲エリア</h2>
-    <%= @gadget.address %>
-    <hr/>
     <div class="row text-center row-space-1 text-babu">
       <div class="col-md-3">
         <i class="fa fa-jpy fa-2x" aria-hidden="true"></i></i>
       </div>
       <div class="col-md-3">
-        <i class="fa fa-star fa-2x" aria-hidden="true"></i>
+        <i class="fa fa-heart fa-2x" aria-hidden="true"></i>
       </div>
       <div class="col-md-3">
         <i class="fa fa-book fa-2x" aria-hidden="true"></i>
       </div>
       <div class="col-md-3">
-        <i class="fa fa-handshake-o fa-2x" aria-hidden="true"></i>
+        <i class="fa fa-play-circle-o fa-2x" aria-hidden="true"></i>
       </div>
     </div>
 
     <div class="row text-center">
       <div class="col-md-3"><%= @gadget.price %>円/1日</div>
-      <div class="col-md-3">カメラ付き</div>
-      <div class="col-md-3">動画説明書</div>
-      <div class="col-md-3">チャットサポート</div>
+      <div class="col-md-3">保証あり</div>
+      <div class="col-md-3">手順書あり</div>
+      <div class="col-md-3">初期設定済み</div>
     </div>
-    <hr />
-    <div class="row">
-      <h2>付属品</h2>
-      <div class="col-md-12">
-        <ul>
-          <li><i class="fa fa-shopping-bag" aria-hidden="true">専用バッグ</i></li>
-          <li><i class="fa fa-file-word-o" aria-hidden="true">説明書</i></li>
-        </ul>
+    <div class="row text-center row-space-1 text-babu">
+      <div class="col-md-3">
+        <i class="fa fa-shopping-bag fa-2x" aria-hidden="true"></i></i>
+      </div>
+      <div class="col-md-3">
+        <i class="fa fa-handshake-o fa-2x" aria-hidden="true"></i>
+      </div>
+      <div class="col-md-3">
+        <i class="fa fa-user-circle-o fa-2x" aria-hidden="true"></i>
+      </div>
+      <div class="col-md-3">
+        <i class="fa fa-calendar fa-2x" aria-hidden="true"></i>
       </div>
     </div>
+
+    <div class="row text-center">
+      <div class="col-md-3">専用バッグで配送</div>
+      <div class="col-md-3">チャットサポート可</div>
+      <div class="col-md-3">返却時アカウント削除</div>
+      <div class="col-md-3">1H単位で受け取り可能</div>
+    </div>
     <hr />
-    <h2>用意するもの</h2>
+    <h2>配達範囲エリア</h2>
+    <%= @gadget.address %>
+    <hr/>
+
+
     <hr />
     <h2>キャンセルポリシー</h2>
+    (サービス詳細掲載予定)
     <hr />
     <h2>保証</h2>
+    (サービス詳細掲載予定)
     <hr />
-    <h2><i class="fa fa-truck" aria-hidden="true"></i>配送</h2>
+    <br />
+    <br />
   </div>
 
   <div class="col-md-4">

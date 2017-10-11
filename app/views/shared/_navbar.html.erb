@@ -24,12 +24,12 @@
         </li>
 
         <% if !user_signed_in? %>
-          <li><%= link_to "ログイン", new_user_session_path %></li>
-          <li><%= link_to "ユーザー登録", new_user_registration_path %></li>
+          <li><%= link_to "ログイン", new_user_session_path, class: "navbar-link" %></li>
+          <li><%= link_to "ユーザー登録", new_user_registration_path, class: "navbar-link"%></li>
         <% else %>
           <li>
             <%= link_to notifications_index_path, class: "navbar-brand" do %>
-              <i class="fa fa-bell fa-lg icon-babu"></i>
+              <i class="fa fa-bell fa-lg icon-babu bell-position"></i>
               <span class="badge" id="unread_count"><%= @notifications_count if @notifications_count > 0 %></span>
             <% end %>
           </li>

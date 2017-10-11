@@ -10,7 +10,8 @@
 
     <link href="https://fonts.googleapis.com/css?family=Varela+Round" rel="stylesheet">
     <%= stylesheet_link_tag "jquery-ui", :media => "all" %>
-
+    <script src="<%= ENV['GMAP_JS_URL'] %>&libraries=places"></script>
+    <link rel="stylesheet" href="http://code.jquery.com/ui/1.12.1/themes/hot-sneaks/jquery-ui.css">
     <script src="https://js.pusher.com/4.1/pusher.min.js"></script>
     <% if user_signed_in? %>
       <script>

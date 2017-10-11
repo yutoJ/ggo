@@ -14,7 +14,7 @@ html {
 
 body {
   color: #565a5c;
-  background-color: #F6F6F6;
+  background-color: #FFF;
   font-family: "Varela Round", "Helvetica Neue", "Helvetica", "Arial", sans-serif;
 }
 
@@ -50,6 +50,9 @@ footer {
   padding: 20px;
 }
 
+.navbar-link {
+  margin-top: 7px;
+}
 // button
 .btn {
   color: #fff;
@@ -135,6 +138,10 @@ footer {
   display: block;
 }
 // notification icon
+.bell-position {
+  margin-left: 20px;
+  margin-top: -5px;
+}
 .badge {
   background-color: #FF5A5F;
   position: relative;
@@ -303,6 +310,7 @@ footer {
 //avatar
 .avatar-small {
   width: 28px;
+  height: 28px;
 }
 
 .avatar-medium {
@@ -315,6 +323,7 @@ footer {
 
 .avatar-xlarge {
   width: 175px;
+  height: 175px;
 }
 
 .avatar-full {

@@ -33,6 +33,13 @@
             <%= f.email_field :email, autofocus: true, placeholder: "メール", class: "form-control" %>
           </div>
 
+          <div class="form-group">
+            <span class="btn btn-default btn-file text-babu">
+              <i class="fa fa-cloud-upload" aria-hidden="true"></i> 写真を選択
+              <%= f.file_field :local_image %>
+            </span>
+          </div>
+
           <% if devise_mapping.confirmable? && resource.pending_reconfirmation? %>
           <div>Currently waiting confirmation for: <%= resource.unconfirmed_email %></div>
           <% end %>
