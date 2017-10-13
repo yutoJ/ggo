@@ -10,13 +10,34 @@
       <div class="panel-body">
         <div class="container">
           <%= form_for @gadget do |f| %>
-            <div class="row">
-              <div class="form-group">
-                <label>住所</label>
-                <%= f.text_field :address, placeholder: "送り元住所", class: "form-control", required: true, id: "autoaddress" %>
-              </div>
+          <div class="row form-group">
+            <div class="col-md-4">
+              <%= f.radio_button :address, "東京", checked: "checked" %>
+              <%= f.label "東京" %>
             </div>
-
+            <div class="col-md-4">
+              <%= f.radio_button :address, "大阪", disabled: "disabled" %>
+              <%= f.label "大阪", class: "unavailable" %>
+            </div>
+            <div class="col-md-4">
+              <%= f.radio_button :address, "福岡", disabled: "disabled" %>
+              <%= f.label "福岡", class: "unavailable" %>
+            </div>
+          </div>
+          <div class="row form-group">
+            <div class="col-md-4">
+              <%= f.radio_button :address, "名古屋", disabled: "disabled" %>
+              <%= f.label "名古屋", class: "unavailable" %>
+            </div>
+            <div class="col-md-4">
+              <%= f.radio_button :address, "仙台", disabled: "disabled" %>
+              <%= f.label "仙台", class: "unavailable" %>
+            </div>
+            <div class="col-md-4">
+              <%= f.radio_button :address, "広島", disabled: "disabled" %>
+              <%= f.label "広島", class: "unavailable" %>
+            </div>
+          </div>
             <div class="text-center">
               <%= f.submit "保存", class: "btn btn-form" %>
             </div>
