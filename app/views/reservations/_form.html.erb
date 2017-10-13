@@ -1,7 +1,7 @@
 <div class="panel panel-default">
   <div class="panel-heading">
-    <span><% if @gadget.Instant? %><i class="fa fa-bolt" style="color: #ffb400"></i> <% end %> <%= @gadget.price %>円</span>
-    <span class="pull-right">/日</span>
+    <span><% if @gadget.Instant? %><i class="fa fa-bolt" aria-hidden="true" style="color: #ffb400"></i> <% end %> レンタル料金</span>
+    <span class="pull-right"><%= @gadget.price %>円/日</span>
   </div>
   <div class="panel-body">
     <%= form_for [@gadget, @gadget.reservations.new] do |f| %>

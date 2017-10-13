@@ -1,6 +1,6 @@
 <div class="row">
   <div class="col-md-8">
-    <h1><%= @gadget.listing_name %></h1>
+    <h2><%= @gadget.listing_name %></h2>
     <%= image_tag @gadget.cover_photo(:thumb), style: "width: 100%;", class: "img-rounded" %>
     <hr/>
   </div>
@@ -11,14 +11,13 @@
       <%= link_to @gadget.user.name, user_path(@gadget.user) %>
     </div>
     <hr />
-      <%= @gadget.user.introduction %>
-    <hr/>
+      <%= simple_format(@gadget.user.introduction) %>
   </div>
 </div>
 <div class="row">
   <div class="col-md-8">
     <h2>紹介</h2>
-    <%= @gadget.description %>
+    <%= simple_format(@gadget.description) %>
     <hr />
     <div class="row text-center row-space-1 text-babu">
       <div class="col-md-3">
@@ -34,13 +33,13 @@
         <i class="fa fa-play-circle-o fa-2x" aria-hidden="true"></i>
       </div>
     </div>
-
     <div class="row text-center">
       <div class="col-md-3"><%= @gadget.price %>円/1日</div>
       <div class="col-md-3">保証あり</div>
       <div class="col-md-3">手順書あり</div>
       <div class="col-md-3">初期設定済み</div>
     </div>
+    <br />
     <div class="row text-center row-space-1 text-babu">
       <div class="col-md-3">
         <i class="fa fa-shopping-bag fa-2x" aria-hidden="true"></i></i>
@@ -64,10 +63,7 @@
     </div>
     <hr />
     <h2>配達範囲エリア</h2>
-    <%= @gadget.address %>
-    <hr/>
-
-
+    東京都内
     <hr />
     <h2>キャンセルポリシー</h2>
     (サービス詳細掲載予定)

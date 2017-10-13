@@ -1,7 +1,7 @@
 <div class="row">
   <dov class="col-md-12">
     <div class="panel panel-default">
-      <div class="panel-heading">チャット</div>
+      <div class="panel-heading">新着メッセージ</div>
       <div class="panel-body">
         <div class="container">
 
@@ -16,6 +16,7 @@
                   </div>
                   <div class="col-md-2">
                     <%= other.name %>
+                    <br />
                     <%= date_japan(conversation.messages.last.created_at) %>
                   </div>
                   <div class="col-md-8">
